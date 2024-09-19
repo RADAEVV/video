@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+<header class="text-gray-400 bg-gray-900 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+      <a class="mr-5 hover:text-white">First Link</a>
+      <a class="mr-5 hover:text-white">Second Link</a>
+      <a class="mr-5 hover:text-white">Third Link</a>
+      <a class="hover:text-white">Fourth Link</a>
+    </nav>
+    <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl xl:block lg:hidden">Waifu Gallery</span>
+    </a>
+    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+      <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="h-screen w-screen overflow-hidden">
+  <div class="">
+    {% for image in data %}
+      <div class="w-full h-12">
+        <img class="object-cover object-center bg-repeat bg-cover" src="{{ image.url }}" alt="{{ image.tags }}">
+      </div>
+    {% endfor %}
+  </div>
+  <div class="container px-5 mx-auto flex">
+    <div class="lg:w-1/3 md:w-1/2 bg-gray-900 shadow-md rounded-lg p-8 flex flex-col md:ml-auto w-full md:mt-0 relative z-10">
+      <p class="anime lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+    </div>
+  </div>
+</section>
+<section class="text-gray-400 bg-gray-900 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Master Cleanse Reliac Heirloom</h1>
+<!--    </div>-->
+<!--    <div class="mx-auto w-1/2 p-4 rounded-md">-->
+<!--              {% for image in data %}-->
+<!--          <div class="mx-auto">-->
+<!--              <div class="mx-auto" >-->
+<!--                <div class="flex relative w-96 h-96">-->
+<!--                  <img class="absolute inset-0 object-cover object-center" src="{{ image.url }}" alt="{{ image.tags }}">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+
+  </div>
+</section>
+
+<script src="{% static 'main/script.js' %}"></script>
+</body>
+</html>
